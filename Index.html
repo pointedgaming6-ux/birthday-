@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday 🎉</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
+  color: white;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+section {
+  min-height: 100vh;
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+button {
+  background: #00c6ff;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1rem;
+  border-radius: 30px;
+  cursor: pointer;
+  margin-top: 30px;
+}
+
+.hidden {
+  display: none;
+}
+
+.fade {
+  animation: fadeIn 2s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+</style>
+</head>
+
+<body>
+
+<section>
+  <h1 class="fade">Hey Shreya 🌙</h1>
+  <p class="fade">This is not just a birthday wish.</p>
+  <button onclick="next()">Tap for Surprise 🎁</button>
+</section>
+
+<section id="s2" class="hidden">
+  <h1 class="fade">You’re rare.</h1>
+  <p class="fade">Not perfect. Not fake. Just real.</p>
+  <button onclick="next()">One more 💫</button>
+</section>
+
+<section id="s3" class="hidden">
+  <h1 class="fade">Happy Birthday 🎂</h1>
+  <p class="fade">May this year treat you gently.</p>
+</section>
+
+<audio autoplay loop>
+  <source src="https://assets.mixkit.co/music/preview/mixkit-dreaming-big-31.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+let step = 1;
+function next() {
+  document.getElementById("s" + step).classList.remove("hidden");
+  step++;
+}
+</script>
+
+</body>
+</html>
